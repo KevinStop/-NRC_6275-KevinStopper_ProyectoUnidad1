@@ -17,6 +17,22 @@ def principal():
 @app.route('/Home')
 def Home():
     return render_template('Home.html')
+    
+@app.route('/Citas')
+def Citas():
+    return render_template('Citas.html')
+
+@app.route('/Contacto')
+def Contacto():
+    return render_template('Contacto.html')
+
+@app.route('/About')
+def About():
+    return render_template('About.html')
+
+@app.route('/Departamentos')
+def Departamentos():
+    return render_template('Departamentos.html')
 
 # Ruta para el login
 @app.route('/Login', methods=['GET','POST'])
