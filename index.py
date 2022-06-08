@@ -15,7 +15,7 @@ def principal():
     return render_template('Login.html', Usuario_Registrado = usuario)
 
 @app.route('/Home')
-def home():
+def Home():
     return render_template('Home.html')
 
 # Ruta para el login
@@ -32,7 +32,7 @@ def Login():
             if (usuario.index(correo) > 0):               #obtener el indice del correo
                 posicionCorreo = usuario.index(correo)
                 if(usuario[posicionCorreo] == correo and usuario[posicionCorreo+1] == contrase):        #compara los datos ingresados con el registro
-                    return redirect(url_for('Principal'))              #envia a la pagina Vuelos
+                    return redirect(url_for('Home'))              #envia a la pagina Vuelos
                 else:
                     return redirect(url_for('Login'))
         except:
