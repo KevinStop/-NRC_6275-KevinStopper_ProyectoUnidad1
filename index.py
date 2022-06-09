@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 #Definición de arreglo para ingresar los datos
 usuario = []
+citas = []
 
 #ruta principal en la que tendremos nuestra pagina de inicio de sesion
 @app.route('/' )
@@ -34,21 +35,22 @@ def About():
 def Departamentos():
     return render_template('Departamentos.html')
 
+@app.route('/Consulta')
+def Consulta():
+    return render_template('Consulta.html')
+
 # Ruta para el login
 @app.route('/Login', methods=['GET','POST'])
 def Login():
-    #Obtiene los datos del pagina Login por medio del metodo POST
     if(request.method == "POST"):
-        correo = request.form['email']          #obtencion de correo
-        contrase = request.form['password']         #obtencion de contraseña
+        correo = request.form['email']          
+        contrase = request.form['password']       
 
-
-        #try para evaluar si un correo no se encuentra en la lista
         try:
-            if (usuario.index(correo) > 0):               #obtener el indice del correo
+            if (usuario.index(correo) > 0):              
                 posicionCorreo = usuario.index(correo)
-                if(usuario[posicionCorreo] == correo and usuario[posicionCorreo+1] == contrase):        #compara los datos ingresados con el registro
-                    return redirect(url_for('Home'))              #envia a la pagina Vuelos
+                if(usuario[posicionCorreo] == correo and usuario[posicionCorreo+1] == contrase):        
+                    return redirect(url_for('Home'))              
                 else:
                     return redirect(url_for('Login'))
         except:
