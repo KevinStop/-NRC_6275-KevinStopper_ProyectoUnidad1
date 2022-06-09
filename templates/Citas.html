@@ -61,15 +61,11 @@
 
                 <div class="col-lg-6 order-2 order-lg-1">
                     <div class="pl-lg-5 ml-lg-5">
-                        <h2 id="contactanos" class="site-heading text-black"><strong>CITAS MEDICAS</strong> </h2>
+                        <h2 id="contactanos" class="site-heading text-black"><strong>
+                                <center>CITAS MEDICAS</center>
+                            </strong> </h2>
 
-                        <p class="lead text-black"> <br>¡PREGUNTAS, QUEJAS,SUGERENCIAS!
-                        </p>
-                        <p align="justify" class="text-black-opacity-5"> <br> Llene el formulario digital e
-                            ingrese correctamente la información solicitada, para ser atendido por un
-                            funcionario.
-                        </p>
-                        <img src="https://media.istockphoto.com/vectors/people-wait-in-hospital-hall-interior-vector-illustration-cartoon-vector-id1256189055?b=1&k=6&m=1256189055&s=612x612&w=0&h=Sp5phBp77dzkQ0Y634IHwB8oCNVqlaXVVFB5fc01gwg="
+                        <img src="https://img.freepik.com/vector-gratis/escena-recepcion-hospital-dibujada-mano_23-2148837407.jpg?w=2000"
                             class="img-fluid" alt="..." style="width: 500px;">
                     </div>
 
@@ -98,15 +94,37 @@
                                     placeholder="Telefono Celular">
                             </div>
                             <div class="col-md-6" style="padding: 5px; color: white;">
-                                <label class="font-weight-bold" for="email">Email</label>
-                                <input type="email" id="email" class="form-control" placeholder="Email">
+                                <label class="font-weight-bold" for="Sexo">Sexo</label>
+                                <select name="Sexo" id="Sexo" class="form-control">
+                                    <option value="">Masculino</option>
+                                    <option value="">Femenino</option>
+                                    <option value="">No definido</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12" style="padding: 5px; color: white;">Descripcion Problema</label>
-                                <textarea name="note" id="note" cols="30" rows="5" class="form-control"
-                                    placeholder="Escribe algún mensaje o pregunta..."></textarea>
+                            <div class="col-md-6 mb-3 mb-md-0" style="padding: 5px; color: white;">
+                                <label class="font-weight-bold" for="cedula">Documento de Identificacion</label>
+                                <input type="text" id="cedula" class="form-control datepicker px-2"
+                                    placeholder="Cedula">
+                            </div>
+                            <div class="col-md-6" style="padding: 5px; color: white;">
+                                <label class="font-weight-bold" for="fecha">Fecha</label>
+                                <input type="text" id="fecha" class="form-control" placeholder="Fecha">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12" style="padding: 5px; color: white;">
+                                <label class="font-weight-bold" for="treatment">Departamentos</label>
+                                <select name="treatment" id="treatment" class="form-control">
+                                    <option value="">Dermatologia</option>
+                                    <option value="">Cardiologia</option>
+                                    <option value="">Neumotologia</option>
+                                    <option value="">Odontologia</option>
+                                    <option value="">Oncologia</option>
+                                </select>
                             </div>
                         </div>
 
