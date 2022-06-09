@@ -15,6 +15,7 @@ citas = []
 def principal():
     return render_template('Login.html', Usuario_Registrado = usuario)
 
+
 @app.route('/Home')
 def Home():
     return render_template('Home.html')
