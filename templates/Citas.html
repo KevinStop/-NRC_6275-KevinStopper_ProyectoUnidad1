@@ -70,32 +70,31 @@
 
                 <div class="col-lg-6 mb-5 pl-lg-5 order-1 order-lg-2" style="background-color: black;">
 
-
-                    <form action="/Contacto" method="POST" class="p-5 bg-black">
+                    <form action="/Citas" method="post" class="p-5 bg-black">
 
                         <div class="row form-group">
                             <div class="col-md-6 mb-3 mb-md-0" style="padding: 5px; color: white;">
                                 <label class="font-weight-bold" for="fname">Nombre</label>
-                                <input type="text" id="fname" class="form-control" placeholder="Nombre">
+                                <input type="text" id="fname" name="fname" class="form-control" placeholder="Nombre">
                             </div>
                             <div class="col-md-6" style="padding: 5px; color: white;">
                                 <label class="font-weight-bold" for="lname">Apellido</label>
-                                <input type="text" id="lname" class="form-control" placeholder="Apellido">
+                                <input type="text" id="lname" name="lname" class="form-control" placeholder="Apellido">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-6 mb-3 mb-md-0" style="padding: 5px; color: white;">
                                 <label class="font-weight-bold" for="cell">Telefono</label>
-                                <input type="text" id="cell" class="form-control datepicker px-2"
+                                <input type="text" id="cell" name="cell" class="form-control datepicker px-2"
                                     placeholder="Telefono Celular">
                             </div>
                             <div class="col-md-6" style="padding: 5px; color: white;">
                                 <label class="font-weight-bold" for="Sexo">Sexo</label>
-                                <select name="Sexo" id="Sexo" class="form-control">
-                                    <option value="">Masculino</option>
-                                    <option value="">Femenino</option>
-                                    <option value="">No definido</option>
+                                <select name="Sexo" id="Sexo" name="Sexo" class="form-control">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="No definido">No definido</option>
                                 </select>
                             </div>
                         </div>
@@ -103,24 +102,24 @@
                         <div class="row form-group">
                             <div class="col-md-6 mb-3 mb-md-0" style="padding: 5px; color: white;">
                                 <label class="font-weight-bold" for="cedula">Documento de Identificacion</label>
-                                <input type="text" id="cedula" class="form-control datepicker px-2"
+                                <input type="text" id="cedula" name="cedula" class="form-control datepicker px-2"
                                     placeholder="Cedula">
                             </div>
                             <div class="col-md-6" style="padding: 5px; color: white;">
                                 <label class="font-weight-bold" for="fecha">Fecha</label>
-                                <input type="text" id="fecha" class="form-control" placeholder="Fecha">
+                                <input type="text" id="fecha" name="fecha" class="form-control" placeholder="Fecha">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12" style="padding: 5px; color: white;">
-                                <label class="font-weight-bold" for="treatment">Departamentos</label>
-                                <select name="treatment" id="treatment" class="form-control">
-                                    <option value="">Dermatologia</option>
-                                    <option value="">Cardiologia</option>
-                                    <option value="">Neumotologia</option>
-                                    <option value="">Odontologia</option>
-                                    <option value="">Oncologia</option>
+                                <label class="font-weight-bold" for="departamentos">Departamentos</label>
+                                <select name="departamentos" id="departamentos" name="departamentos" class="form-control">
+                                    <option value="Dermatologia">Dermatologia</option>
+                                    <option value="Cardiologia">Cardiologia</option>
+                                    <option value="Neumotologia">Neumotologia</option>
+                                    <option value="Odontologia">Odontologia</option>
+                                    <option value="Oncologia">Oncologia</option>
                                 </select>
                             </div>
                         </div>
