@@ -1,12 +1,15 @@
 #importar librerias de Flask y tkinter
-#from flask_wtf import FlaskForm
+#from wtforms import Form
 #from wtforms import StringField
 #from wtforms.validators import DataRequired
-from tkinter import SW, messagebox
-from flask import Flask, redirect, request,render_template, url_for
+from tkinter import SW
+from flask import Flask, redirect, request,render_template, url_for, flash
 
 #Iniciar variable de aplicacion 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
+
+# Secret key for session
+app.secret_key = 'mysecretkey'
 
 #Definición de arreglo para ingresar los datos
 usuario = []
@@ -40,14 +43,26 @@ def Citas():
         depa = request.form['departamentos']
         #(Condicional) Si el formulario no tiene ingresado datos no registrara
         if(nombre == "" or apellido  == "" or telefono == "" or ci == ""  or date == ""):
+            flash('Porfavor Llenar todos los campos', 'danger')
             return redirect(url_for('Citas'))
         else:
-            citas.append({'fname': nombre, 'lname': apellido, 'cell': telefono, 'Sexo': sexo,
+            numero = len(citas) + 1
+            citas.append({'numero': numero,'fname': nombre, 'lname': apellido, 'cell': telefono, 'Sexo': sexo,
             'cedula': ci, 'fecha': date, 'departamentos': depa })
+            flash('!Cita registrada!', 'success')
             print(citas)
     return render_template('Citas.html')
 
-##Ruta pagina de de consulta
+@app.route('/borrar/<string:fname>')
+# Param task_id
+def borrar(fname):
+    # Find the task in the tasks list and remove it
+    citas.pop(fname.index(fname))
+    # Redirect to index page
+    return redirect(url_for('Consulta'))
+
+
+#Ruta pagina de de consulta
 @app.route('/Consulta')
 #Funcion que llama pagina de Consulta
 def Consulta():

@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <!--Navbar o barra de navegacion-->
+    <!--En la siguiente clase Expandimos la barra de forma horizontal
+  y con con fixed-top fijaremos la barra en la parte superior y la colocaremos de color negro-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-md">
             <!--Etiqueta de enlace-->
@@ -40,10 +43,9 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a class="btn btn-outline-success" href="../Login" role="button">Logout</a>
-                </form>
+                </div>
             </div>
         </div>
     </nav>
@@ -55,6 +57,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">#</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Telefono</th>
@@ -67,6 +70,7 @@
             <tbody>
                 {% for citas in ocitas %}
                 <tr>
+                    <td>{{citas.numero}}</td>
                     <td>{{citas.fname}}</td>
                     <td>{{citas.lname}}</td>
                     <td>{{citas.cell}}</td>
@@ -74,9 +78,19 @@
                     <td>{{citas.cedula}}</td>
                     <td>{{citas.fecha}}</td>
                     <td>{{citas.departamentos}}</td>
+                    <td>
+                        <td>
+                            <a
+                              href="/borrar/{{citas.fname}}"
+                              class="btn btn-danger"
+                              >Borrar</a
+                            >
+                          </td>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
+
         </table>
 
     </div>
@@ -84,7 +98,7 @@
     <!--Footer-->
     <br>
 
-    <footer class="bg-dark text-center text-white fixed-bottom">
+    <footer class="bg-dark text-center text-white sticky-bottom">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Social media -->
